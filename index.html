@@ -22,6 +22,9 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet">
 
     <link href="css/templatemo-festava-live.css" rel="stylesheet">
+    <!-- ajaẋ lib -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- ajax end -->
     <!--
 
 TemplateMo 583 Festava Live
@@ -112,19 +115,17 @@ https://templatemo.com/tm-583-festava-live
                             <div class="ticket-form-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="Name" id="ticket-form-name"
-                                            class="form-control" placeholder="Full name" required>
+                                        <input type="text" name="Name" id="ticket-form-name" class="form-control"
+                                            placeholder="Full name" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="Email" id="ticket-form-email"
-                                            pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address"
-                                            required>
+                                        <input type="email" name="Email" id="ticket-form-email" pattern="[^ @]*@[^ @]*"
+                                            class="form-control" placeholder="Email address" required>
                                     </div>
                                 </div>
 
-                                <input type="tel" class="form-control" name="Phone" placeholder="Number"
-                                     required="">
+                                <input type="tel" class="form-control" name="Phone" placeholder="Number" required="">
 
                                 <h6>Your Qualification</h6>
 
@@ -150,11 +151,11 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div> -->
 
-                                <input type="text" name="Qualification" id="ticket-form-number"
-                                    class="form-control" placeholder="Qualification" required>
+                                <input type="text" name="Qualification" id="ticket-form-number" class="form-control"
+                                    placeholder="Qualification" required>
 
-                                <textarea name="WhyChooseCoding" rows="3" class="form-control"
-                                    id="ticket-form-message" placeholder="Why You Choose Coding" required></textarea>
+                                <textarea name="WhyChooseCoding" rows="3" class="form-control" id="ticket-form-message"
+                                    placeholder="Why You Choose Coding" required></textarea>
 
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                     <button type="submit" class="form-control">Submit</button>
@@ -200,7 +201,7 @@ https://templatemo.com/tm-583-festava-live
                         <div class="about-text-wrap">
                             <img src="images/coding-lap.png" class="about-image img-fluid">
 
-                          <!--  <div class="about-text-info d-flex">
+                            <!--  <div class="about-text-info d-flex">
                                 <div class="d-flex">
                                     <i class="about-text-icon bi-person"></i>
                                 </div>
@@ -211,11 +212,11 @@ https://templatemo.com/tm-583-festava-live
 
                                     <p class="mb-0">Learn and grow with Head Codes</p>
                                 </div> -->
-                            </div>
                         </div>
                     </div>
-
                 </div>
+
+            </div>
             </div>
         </section>
 
@@ -476,20 +477,20 @@ T e m p l a t e M o
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
     <script>
-        $("#submit-form").submit((e)=>{
+        $("#submit-form").submit((e) => {
             e.preventDefault()
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbyiUCxs4ybDquQver0Cv0ZKhSupIbresVq1C38fWIyZnJ58O4lONYOf7Oy4ZsJw7a044w/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
+                url: "https://script.google.com/macros/s/AKfycbyiUCxs4ybDquQver0Cv0ZKhSupIbresVq1C38fWIyZnJ58O4lONYOf7Oy4ZsJw7a044w/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function (response) {
                     // alert("Form submitted successfully")
                     window.location.reload()
                     //window.location.href="https://google.com"
                 },
-                error:function (err){
+                error: function (err) {
                     alert("Something Error")
-    
+
                 }
             })
         })
