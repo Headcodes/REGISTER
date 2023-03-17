@@ -105,26 +105,26 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-10 mx-auto">
-                        <form class="custom-form ticket-form mb-5 mb-lg-0" action="#" method="post" role="form">
+                        <form id="submit-form" class="custom-form ticket-form mb-5 mb-lg-0" action="" role="form">
                             <h2 class="text-center mb-4">Register for Our Coding Program and Launch Your Tech Career
                             </h2>
 
                             <div class="ticket-form-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="ticket-form-name" id="ticket-form-name"
+                                        <input type="text" name="Name" id="ticket-form-name"
                                             class="form-control" placeholder="Full name" required>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="ticket-form-email" id="ticket-form-email"
+                                        <input type="email" name="Email" id="ticket-form-email"
                                             pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address"
                                             required>
                                     </div>
                                 </div>
 
-                                <input type="tel" class="form-control" name="ticket-form-phone" placeholder="+91"
-                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="">
+                                <input type="tel" class="form-control" name="Phone" placeholder="Number"
+                                     required="">
 
                                 <h6>Your Qualification</h6>
 
@@ -150,11 +150,11 @@ https://templatemo.com/tm-583-festava-live
                                     </div>
                                 </div> -->
 
-                                <input type="text" name="ticket-form-number" id="ticket-form-number"
+                                <input type="text" name="Qualification" id="ticket-form-number"
                                     class="form-control" placeholder="Qualification" required>
 
-                                <textarea name="ticket-form-message" rows="3" class="form-control"
-                                    id="ticket-form-message" placeholder="Why You Choose Coding"></textarea>
+                                <textarea name="WhyChooseCoding" rows="3" class="form-control"
+                                    id="ticket-form-message" placeholder="Why You Choose Coding" required></textarea>
 
                                 <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                     <button type="submit" class="form-control">Submit</button>
@@ -475,6 +475,25 @@ T e m p l a t e M o
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbyiUCxs4ybDquQver0Cv0ZKhSupIbresVq1C38fWIyZnJ58O4lONYOf7Oy4ZsJw7a044w/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    // alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 
 </body>
 
